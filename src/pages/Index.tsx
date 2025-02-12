@@ -9,7 +9,13 @@ import {
   UserPlus,
   ChevronDown,
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  Bot,
+  BookOpen,
+  ListFilter,
+  AlertCircle,
+  Scale,
+  Glasses
 } from "lucide-react";
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
@@ -45,9 +51,41 @@ const Index = () => {
     ],
   };
 
+  const aiActions = [
+    {
+      icon: Bot,
+      title: "Análise do Processo",
+      description: "Gere um resumo completo do processo com IA"
+    },
+    {
+      icon: Scale,
+      title: "Análise Jurídica",
+      description: "Analise as chances de sucesso e estratégias"
+    },
+    {
+      icon: AlertCircle,
+      title: "Alertas Importantes",
+      description: "Identifique prazos e pontos críticos"
+    },
+    {
+      icon: ListFilter,
+      title: "Resumo de Movimentações",
+      description: "Resuma as principais movimentações"
+    },
+    {
+      icon: BookOpen,
+      title: "Análise Documental",
+      description: "Analise documentos e peças do processo"
+    },
+    {
+      icon: Glasses,
+      title: "Revisão de Petições",
+      description: "Revise petições e sugira melhorias"
+    }
+  ];
+
   return (
     <div className="flex h-screen">
-      {/* Sidebar */}
       <aside className="w-64 bg-[#F8FAFC] border-r border-gray-200 flex flex-col">
         <div className="p-4">
           <div className="mb-4">
@@ -61,7 +99,6 @@ const Index = () => {
 
         <div className="flex-1 overflow-y-auto">
           <div className="px-2">
-            {/* Documentos Section */}
             <button
               onClick={() => setIsDocumentosOpen(!isDocumentosOpen)}
               className="flex items-center w-full p-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg"
@@ -91,7 +128,6 @@ const Index = () => {
               </div>
             )}
 
-            {/* Histórico Section */}
             <button
               onClick={() => setIsHistoricoOpen(!isHistoricoOpen)}
               className="flex items-center w-full p-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg mt-2"
@@ -115,7 +151,6 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Bottom Section */}
         <div className="p-4 border-t border-gray-200 space-y-2">
           <button className="flex items-center w-full p-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg">
             <Archive className="w-4 h-4 mr-2" />
@@ -132,11 +167,9 @@ const Index = () => {
         </div>
       </aside>
 
-      {/* Main Content */}
       <main className="flex-1 overflow-auto">
         <div className="p-4">
           <div className="max-w-4xl mx-auto">
-            {/* Search Bar */}
             <div className="mb-6">
               <Input
                 className="w-full bg-gray-50 border-gray-200"
@@ -151,7 +184,21 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Rest of the content */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+              {aiActions.map((action, index) => (
+                <button
+                  key={index}
+                  className="flex items-start p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all duration-200"
+                >
+                  <action.icon className="w-5 h-5 text-blue-600 mt-1 mr-3" />
+                  <div className="text-left">
+                    <h3 className="font-medium text-gray-900">{action.title}</h3>
+                    <p className="text-sm text-gray-500 mt-1">{action.description}</p>
+                  </div>
+                </button>
+              ))}
+            </div>
+
             <div className="space-y-8">
               <div className="text-center space-y-4">
                 <div className="inline-flex items-center px-3 py-1 text-sm text-lawsuit-text bg-lawsuit-highlight rounded-full animate-float">

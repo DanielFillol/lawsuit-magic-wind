@@ -184,22 +184,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-              {aiActions.map((action, index) => (
-                <button
-                  key={index}
-                  className="flex items-start p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all duration-200"
-                >
-                  <action.icon className="w-5 h-5 text-blue-600 mt-1 mr-3" />
-                  <div className="text-left">
-                    <h3 className="font-medium text-gray-900">{action.title}</h3>
-                    <p className="text-sm text-gray-500 mt-1">{action.description}</p>
-                  </div>
-                </button>
-              ))}
-            </div>
-
-            <div className="space-y-8">
+            <div className="space-y-8 mb-8">
               <div className="text-center space-y-4">
                 <div className="inline-flex items-center px-3 py-1 text-sm text-lawsuit-text bg-lawsuit-highlight rounded-full animate-float">
                   <Sparkles className="w-4 h-4 mr-2" />
@@ -264,6 +249,21 @@ const Index = () => {
                   </div>
                 </Card>
               </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {aiActions.map((action, index) => (
+                <button
+                  key={index}
+                  className="flex items-start p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all duration-200"
+                >
+                  <action.icon className="w-5 h-5 text-blue-600 mt-1 mr-3" />
+                  <div className="text-left">
+                    <h3 className="font-medium text-gray-900">{action.title}</h3>
+                    <p className="text-sm text-gray-500 mt-1">{action.description}</p>
+                  </div>
+                </button>
+              ))}
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+
 import { 
   MessagesSquare, 
   FolderClosed, 
@@ -48,6 +49,46 @@ const Index = () => {
         description: "Certidão de Publicação Expedida",
         type: "ANDAMENTO",
       },
+      {
+        date: "2024-07-24",
+        description: "Conclusos para Decisão",
+        type: "ANDAMENTO",
+      },
+      {
+        date: "2024-07-23",
+        description: "Petição Intermediária Juntada",
+        type: "JUNTADA",
+      },
+      {
+        date: "2024-07-22",
+        description: "Certidão de Cartório Expedida",
+        type: "EXPEDIENTE",
+      },
+      {
+        date: "2024-07-21",
+        description: "Mandado Devolvido Cumprido",
+        type: "ANDAMENTO",
+      },
+      {
+        date: "2024-07-20",
+        description: "Audiência de Conciliação Designada",
+        type: "AUDIENCIA",
+      },
+      {
+        date: "2024-07-19",
+        description: "Contestação Juntada",
+        type: "JUNTADA",
+      },
+      {
+        date: "2024-07-18",
+        description: "Citação Ordenada",
+        type: "DESPACHO",
+      },
+      {
+        date: "2024-07-17",
+        description: "Inicial Distribuída",
+        type: "DISTRIBUICAO",
+      },
     ],
   };
 
@@ -86,6 +127,7 @@ const Index = () => {
 
   return (
     <div className="flex h-screen">
+      {/* Sidebar */}
       <aside className="w-64 bg-[#F8FAFC] border-r border-gray-200 flex flex-col">
         <div className="p-4">
           <div className="mb-4">
